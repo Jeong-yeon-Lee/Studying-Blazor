@@ -1,0 +1,93 @@
+﻿@import url('open-iconic/font/css/open-iconic-bootstrap.min.css');
+
+html, body {
+    font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+a, .btn-link {
+    color: #0366d6;
+}
+
+.btn-primary {
+    color: #fff;
+    background-color: #1b6ec2;
+    border-color: #1861ac;
+}
+
+.content {
+    padding-top: 1.1rem;
+}
+
+.valid.modified:not([type=checkbox]) {
+    outline: 1px solid #26b050;
+}
+
+.invalid {
+    outline: 1px solid red;
+}
+
+.validation-message {
+    color: red;
+}
+
+#blazor-error-ui {
+    background: lightyellow;
+    bottom: 0;
+    box-shadow: 0 -1px 2px rgba(0, 0, 0, 0.2);
+    display: none;
+    left: 0;
+    padding: 0.6rem 1.25rem 0.7rem 1.25rem;
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+}
+
+    #blazor-error-ui .dismiss {
+        cursor: pointer;
+        position: absolute;
+        right: 0.75rem;
+        top: 0.5rem;
+    }
+
+    /*아래는 새로 편집한 부분*/
+    .btn{
+        width:300px;
+        height:40px;
+        background-color:indianred;
+        color:white;
+        font-family:'Atari Classic Chunky';
+    }
+
+    .ntodo{
+        width:90%;
+        height:40px;
+      
+    }
+    .container{
+        max-width:600px;
+        background-color:mistyrose;
+        border-radius:10px;
+        padding:30px;
+    }
+    .container>h3{
+        font-size:40px;
+        text-align:center;
+        font-family:'Atari Classic Chunky';
+        margin-bottom:10px;
+    }
+
+    .user_cc{
+        border:0;
+    }
+
+    .user_i{
+        max-width:600px;
+        height:100px;
+        text-align:center;
+        margin:30px auto;
+    }
+
+    .user_i>input{
+        text-indent:10px;
+        margin-bottom:15px;
+    }

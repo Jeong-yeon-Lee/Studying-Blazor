@@ -1,0 +1,37 @@
+﻿@page "/todo"
+<div class="container">
+<h3>Todo(@todos.Count(x=>!x.IsDone))</h3><!--x는 임의로 아무 글자나 넣어도 됨 -->
+    <ul class="list-group">
+    
+        @foreach (var todo in todos)
+        {
+             <li class="list-group-item">
+                 <input type="checkbox" @bind="todo.IsDone" />
+                 <input class="user_cc" @bind="todo.Title" />
+             </li>
+        }
+       
+    
+    </ul>
+ 
+   
+</div>
+<div class="user_i">
+    <input class="ntodo" placeholder="Something todo" @bind="newTodo" />
+    <button class="btn" @onclick="AddTodo">Add todo</button>
+</div>
+@code {
+    private List<TodoItem> todos=new();// 클래스에서 정의된 속성들을 리스트에서 이용할 수 있게 되는 것
+    //private :접근 한정자 클래스의 내부에만 접근 가능  파생 클래스도 안됨 
+    //(public: 클래스의 외부, 내부에서 모두 접근 가능)
+    private string newTodo;//새로운 할 일을 담을 빈 문자열 
+    private void AddTodo()//버튼 클릭시 사용할 메서드 
+    {
+        if(!string.IsNullOrWhiteSpace(newTodo))//IsNullOrWhiteSpace해당 문자열이 비어있거나 공백문자로만 구성되어있는지 bool값으로 줌
+        {
+            todos.Add(new TodoItem {Title=newTodo});
+            newTodo=string.Empty;
+        }
+    }
+    
+}
