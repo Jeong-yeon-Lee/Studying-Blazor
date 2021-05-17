@@ -111,11 +111,17 @@ a, .btn-link {
     overflow:hidden;
 }
 
-.wrt{
-    height:30px;
-    background-color:cornflowerblue;
-    border:0;
-    border-radius:5px;
+.wrt {
+    height: 30px;
+    background-color: cornflowerblue;
+    border: 0;
+    border-radius: 5px;
+    
+}
+
+.wrt:hover{
+    background-color:darkslateblue;
+    color:white;
 }
 .acl1{
     width:inherit;
