@@ -49,45 +49,90 @@ a, .btn-link {
         top: 0.5rem;
     }
 
-    /*아래는 새로 편집한 부분*/
-    .btn{
-        width:300px;
-        height:40px;
-        background-color:indianred;
-        color:white;
-        font-family:'Atari Classic Chunky';
+/*아래는 새로 편집한 부분*/
+/*todo*/
+.btn {
+    width: 300px;
+    height: 40px;
+    background-color: indianred;
+    color: white;
+    font-family: 'Atari Classic Chunky';
+}
+
+.ntodo {
+    width: 90%;
+    height: 40px;
+}
+
+.container {
+    max-width: 600px;
+    background-color: mistyrose;
+    border-radius: 10px;
+    padding: 30px;
+}
+
+    .container > h3 {
+        font-size: 40px;
+        text-align: center;
+        font-family: 'Atari Classic Chunky';
+        margin-bottom: 10px;
     }
 
-    .ntodo{
-        width:90%;
-        height:40px;
-      
-    }
-    .container{
-        max-width:600px;
-        background-color:mistyrose;
-        border-radius:10px;
-        padding:30px;
-    }
-    .container>h3{
-        font-size:40px;
-        text-align:center;
-        font-family:'Atari Classic Chunky';
-        margin-bottom:10px;
+.user_cc {
+    border: 0;
+}
+
+.user_i {
+    max-width: 600px;
+    height: 100px;
+    text-align: center;
+    margin: 30px auto;
+}
+
+    .user_i > input {
+        text-indent: 10px;
+        margin-bottom: 15px;
     }
 
-    .user_cc{
-        border:0;
-    }
+/*article*/
+.ipbox {
+    width: 500px;
+    height: 400px;
+    background-color: lightblue;
+    border-radius: 10px;
+    margin:20px auto;
+}
 
-    .user_i{
-        max-width:600px;
-        height:100px;
-        text-align:center;
-        margin:30px auto;
-    }
+.mybox {
+    width: 300px;
+    height: 400px;
+    border-radius:5px;
+    background-color:powderblue;
+    overflow:hidden;
+}
 
-    .user_i>input{
-        text-indent:10px;
-        margin-bottom:15px;
-    }
+.wrt{
+    height:30px;
+    background-color:cornflowerblue;
+    border:0;
+    border-radius:5px;
+}
+.acl1{
+    width:inherit;
+    height:40px;
+    background-color:aliceblue;
+    text-align:center;
+    font-weight:bold;
+    font-size:20px;
+    line-height:40px;
+}
+.acl2 {
+    width: inherit;
+    height:auto;
+}
+
+.mcontainer{
+    width:90%;
+    height:auto;
+    margin:0 auto;
+}

@@ -1,7 +1,40 @@
 ﻿@page "/"
 
-<h1>Hello, world!</h1>
+<h1 class="text-center">Articles</h1>
+<div class="ipbox flex-column p-5">
+    <div><input class="w-100 mb-3" placeholder="Title here!" @bind="newTitle" /></div>
+    <div><textarea class="w-100" rows="10" placeholder="Article here!" @bind="newArticle"/></div>
+    <div><button class="wrt w-100" @onclick="AddArticle">입력하기</button></div>
+</div>
+<div class="d-flex flex-wrap justify-content-start mcontainer">
+    @foreach(var article in articles)
+    {
+        <div class="mybox m-2">
+            <img class="w-100" src="https://pbs.twimg.com/media/DQkvGXQVwAAOHbv.jpg" alt="귀여운새!" />
+            <div class="acl1">@article.Title</div>
+            <div class="acl2 p-2">@article.Article</div>
+        </div>
+    }
+</div>
 
-Welcome to your new app.
 
-<SurveyPrompt Title="How is Blazor working for you?" />
+
+
+@code{
+    private List<ArticleItem> articles = new();
+    private string newTitle;
+    private string newArticle;
+    private void AddArticle()
+    {
+
+        
+        if(!string.IsNullOrWhiteSpace(newTitle)&&!string.IsNullOrWhiteSpace(newArticle))
+        {
+            articles.Add(new ArticleItem { Title = newTitle, Article = newArticle  });
+            
+            newArticle = string.Empty;
+            newTitle = string.Empty;
+        }
+    }
+}
+
