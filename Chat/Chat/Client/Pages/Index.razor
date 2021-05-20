@@ -1,11 +1,40 @@
 ﻿@page "/"
 
-<div class="home_container">
-    <div class="inner_container d-flex justify-content-center align-items-center flex-column">
-        <h1>Welcome!</h1>
-        <NavLink href="/login">LOGIN</NavLink>
-    </div>
-</div>
+<h2>SimSim</h2>
+
+<ul>
+  @foreach (var chat in chats)
+    {
+        <li>user: @chat.Mymessage</li>
+        
+    if(chat.IsSent)
+        {
+            <li>simsim: "Hello I'm simsim"</li>
+           
+        }
+        
+        
+    }
+</ul>
+
+<input placeholder="Write here!" @bind="newMessage" />
+<button @onclick="SendMessage">SEND</button>
 
 
+@code{
+    private List<Chatt> chats = new();
+    private string newMessage;
+  
+    public string[] simMessage = { "Hello I'm simsim", "Good afternoon!", "It’s a pleasure!", "I’m well. How are you?", "Fine, thanks. And yourself?", "It’s time for me to go.", "Got it, thanks!", "Bye! Have a good day!" };
+    
+
+    private void SendMessage()
+    {
+        if (!string.IsNullOrWhiteSpace(newMessage))
+        {
+            chats.Add(new Chatt { Mymessage = newMessage, IsSent = true });
+            newMessage = string.Empty;
+        }
+    }
+}
 
