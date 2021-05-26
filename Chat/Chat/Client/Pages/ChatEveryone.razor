@@ -1,0 +1,28 @@
+﻿@page "/everychat"
+<MyNavi></MyNavi>
+
+<div class="d-flex justify-content-center">
+    <div class="every-whole mt-3">
+        <h2 class="text-center every-title mb-3">ChatChat</h2>
+        <div class="every-chat-box d-flex flex-column">
+            <ul class="every-ul">
+                
+            </ul>
+            <div class="everychat-inputs">
+                <select>
+                    <option>-</option>
+                    <option>1</option>
+                    <option>2</option>
+                    <option>3</option>
+                </select>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+
+@code {
+    private List<FriendOne> friend1 = new();
+    private string newOneMessage;
+}
