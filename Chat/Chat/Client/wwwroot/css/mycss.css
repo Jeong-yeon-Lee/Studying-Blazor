@@ -48,21 +48,33 @@ a:hover{
     position: relative;
 }
 
-.glo-circle{
+    .glo-box > input {
+        width: 70px;
+        height: 30px;
+        opacity: 0;
+        cursor: pointer;
+        position:relative;
+    }
+
+.glo-circle {
     width: 26px;
     height: 26px;
     background-color: white;
     border-radius: 28px;
     position: absolute;
+    top:2px;
+    left:2px;
     cursor: pointer;
-    transition-property: right;
-    transition-duration: 2s;
+    transition-property: transform;
+    transition-duration: 1s;
+
+}
+
+.glo-box > input:checked + .glo-circle {
+    transform: translate(41px,0);
 }
 
 
-.go-right{
-    right:1px;  
-}
 
 .myh2{
     font-weight:bold;
@@ -142,3 +154,37 @@ a:hover{
     .mybtn2:hover {
         box-shadow: 2px 2px 4px 2px darkkhaki;
     }
+
+/*every-chat*/
+
+.every-chat-box{
+    width:400px;
+    height:800px;
+    background-color:white;
+    border-radius:5px;
+    /*box-shadow:1px 1px 10px 5px darkkhaki;*/
+    overflow:hidden;
+}
+
+.every-whole{
+    width:400px;
+    height:auto;
+}
+
+.every-title{
+    font-weight:bold;
+}
+
+.everychat-inputs{
+    width:inherit;
+    height:100px;
+    background-color:darkkhaki;
+}
+
+.every-ul {
+    width: inherit;
+    height: 700px;
+    overflow:auto;
+    box-sizing:border-box;
+    padding:10px;
+}
