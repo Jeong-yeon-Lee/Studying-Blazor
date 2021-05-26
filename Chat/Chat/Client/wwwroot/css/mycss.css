@@ -39,6 +39,31 @@ a:hover{
     
 }
 
+.glo-box {
+    width: 70px;
+    height: 30px;
+    background-color: rgba(240,230,140,0.5);
+    border-radius: 20px;
+    padding: 2px;
+    position: relative;
+}
+
+.glo-circle{
+    width: 26px;
+    height: 26px;
+    background-color: white;
+    border-radius: 28px;
+    position: absolute;
+    cursor: pointer;
+    transition-property: right;
+    transition-duration: 2s;
+}
+
+
+.go-right{
+    right:1px;  
+}
+
 .myh2{
     font-weight:bold;
 }
@@ -65,7 +90,7 @@ a:hover{
 }
 
 .mybtn{
-    width:100px;
+    width:220px;
     height:30px;
     background-color:khaki;
     border:0;

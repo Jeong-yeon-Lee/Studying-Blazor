@@ -8,34 +8,76 @@
     </ul>
 </div>
 <div class="d-flex justify-content-center">
-    <div class="simsim-box d-flex flex-column justify-content-center mb-3 mt-5">
+    @if (IsChange)
+    {
+        <div class="simsim-box d-flex flex-column justify-content-center mb-3 mt-5">
 
-        <h2 class="text-center myh2">SimSim</h2>
-        <h5 class="text-center myh5">심심이에게 말을 걸어보세요!</h5>
-        <ul class="myul">
-            @foreach (var chat in chats)
-            {
-                <li>user: @chat.Mymessage</li>
-
-                /*
-            if(chat.IsSent)
+            <h2 class="text-center myh2">SimSim</h2>
+            <h5 class="text-center myh5">Talk to SimSim :)</h5>
+            <ul class="myul">
+                @foreach (var chat in chats)
                 {
-                    <li>simsim: @simMessage[index]</li>
+                    <li>user: @chat.Mymessage</li>
+
+                    /*
+                if(chat.IsSent)
+                    {
+                        <li>simsim: @simMessage[index]</li>
+
+                    }
+                    */
+                    <li>simsim: @chat.SimsMessage</li>
 
                 }
-                */
-                <li>simsim: @chat.SimsMessage</li>
+            </ul>
 
-            }
-        </ul>
+            <input class="myinput mb-3 mt-3" placeholder="Write here!" @bind="newMessage" />
+            <div class="d-flex justify-content-between mb-3">
+                <div class="glo-box">
+                    <div class="glo-circle @(IsChange? "go-right" :"")" @onclick="ChangeClass"></div>
+                </div>
+                <button class="mybtn" @onclick="SendMessage">SEND</button>
+                <!--<button class="mybtn" @onclick="SendMessageInKor">전송</button>-->
+            </div>
 
-        <input class="myinput mb-3 mt-3" placeholder="Write here!" @bind="newMessage" />
-        <div class="d-flex justify-content-between mb-3">
-            <button class="mybtn" @onclick="SendMessage">SEND</button>
-            <button class="mybtn" @onclick="SendMessageInKor">전송</button>
         </div>
+    }
+    else
+    {
+        <div class="simsim-box d-flex flex-column justify-content-center mb-3 mt-5">
 
-    </div>
+            <h2 class="text-center myh2">심심이</h2>
+            <h5 class="text-center myh5">심심이에게 말을 걸어보세요:)</h5>
+            <ul class="myul">
+                @foreach (var chat in chats)
+                {
+                    <li>나: @chat.Mymessage</li>
+
+                    /*
+                if(chat.IsSent)
+                    {
+                        <li>simsim: @simMessage[index]</li>
+
+                    }
+                    */
+                    <li>심심이: @chat.SimsMessage</li>
+
+                }
+            </ul>
+
+            <input class="myinput mb-3 mt-3" placeholder="여기에 적어봐요!" @bind="newMessage" />
+            <div class="d-flex justify-content-between mb-3">
+                <div class="glo-box">
+                    <div class="glo-circle @(IsChange? "go-right" :"")" @onclick="ChangeClass"></div>
+                </div>
+                
+                <button class="mybtn" @onclick="SendMessageInKor">전송</button>
+            </div>
+
+        </div>
+    }
+
+
 
 </div>
 
@@ -68,6 +110,7 @@
 
         private void SendMessage()
         {
+
             Random randomm;
             randomm = new Random();
             index = randomm.Next(simMessage.Length);
@@ -91,6 +134,13 @@
                 chats.Add(new Chatt { Mymessage = newMessage, SimsMessage = simMessageKor[index2] });
                 newMessage = string.Empty;
             }
+        }
+
+        private bool IsChange { get; set; } = false;
+
+        private void ChangeClass()
+        {
+            IsChange = !IsChange;
         }
     }
 
