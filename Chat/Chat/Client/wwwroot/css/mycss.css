@@ -1,7 +1,119 @@
 ﻿
-/*home*/
-body{
+/*simsim*/
+body {
+    margin: 0;
+    padding: 0;
+    background-color: khaki;
+    font-family: NanumBarunpen;
+}
+a{
+    text-decoration:none;
+    color:white;
+}
+a:hover{
+    text-decoration:none;
+    color:white;
+    font-weight:bold;
+}
+
+.sticky-ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-family: NanumBarunpen;
+}
+
+.sticky-ul > li {
+    width: 100px;
+    text-align: center;
+    line-height: 30px;
+    height: inherit;
+}
+
+.simsim-box {
+    width: 350px;
+    height: auto;
+    background-color: ivory;
+    padding: 25px;
+    border-radius: 5px;
+    
+}
+
+.myh2{
+    font-weight:bold;
+}
+.myh5{
+    font-size:14px;
+    color:darkkhaki;
+}
+.myul{
+    width:300px;
+    height:inherit;
+}
+
+.myul{
+    list-style:none;
     margin:0;
     padding:0;
 }
+.myul>li{
+    width:inherit;
+    height:30px;
+}
+.myul>li:nth-child(even){
+    background-color:#f8f3b6;
+}
 
+.mybtn{
+    width:100px;
+    height:30px;
+    background-color:khaki;
+    border:0;
+    border-radius:5px;
+}
+
+.mybtn:hover{
+    box-shadow:2px 2px 4px 2px darkkhaki;
+}
+
+.myinput{
+    width:300px;
+    height:30px;
+    border:2px dotted khaki;
+    border-radius:5px;
+    text-indent:5px;
+}
+
+.mysticky{
+    height:30px;
+    background-color:darkkhaki;
+    color:white;
+}
+
+
+/*talking potato*/
+
+
+.potato-img{
+    width:456px;
+    height:281px;
+}
+
+.msgbox{
+    width:300px;
+    height:40px;
+    background-color:ivory;
+    border:2px dotted darkkhaki;
+}
+
+.mybtn2 {
+    width: 200px;
+    height: 30px;
+    background-color: ivory;
+    border: 0;
+    border-radius: 5px;
+}
+
+    .mybtn2:hover {
+        box-shadow: 2px 2px 4px 2px darkkhaki;
+    }

@@ -3,11 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31220.234
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chat.Server", "Chat\Server\Chat.Server.csproj", "{01E47D15-18B3-4F12-8F93-68A47419C971}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chat.Server", "Chat\Server\Chat.Server.csproj", "{01E47D15-18B3-4F12-8F93-68A47419C971}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chat.Client", "Chat\Client\Chat.Client.csproj", "{F2403AED-DBC2-49FB-99DC-2634A0C824DE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chat.Client", "Chat\Client\Chat.Client.csproj", "{F2403AED-DBC2-49FB-99DC-2634A0C824DE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Chat.Shared", "Chat\Shared\Chat.Shared.csproj", "{FF3D8364-C08E-4470-AD28-C76BEF1C459A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Chat.Shared", "Chat\Shared\Chat.Shared.csproj", "{FF3D8364-C08E-4470-AD28-C76BEF1C459A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

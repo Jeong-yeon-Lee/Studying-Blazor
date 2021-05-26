@@ -1,0 +1,47 @@
+﻿
+@using System
+
+@page "/potato"
+
+<div class="mysticky sticky-top w-100">
+    <ul class="sticky-ul d-flex flex-row-reverse">
+        <li><NavLink href="">심심이</NavLink></li>
+        <li><NavLink href="potato">말하는 감자</NavLink></li>
+    </ul>
+</div>
+
+<h3 class="text-center myh2 mt-3 mb-3">Talking Potato</h3>
+<p class="text-center">버튼을 계속 눌러 감자를 괴롭히세요</p>
+<div class="d-flex flex-column justify-content-center">
+    <div class="text-center mt-3 mb-5">
+        <button class="mybtn2" @onclick="HeyPotato">감자에게 팀장시키기</button>
+        </div>
+        <div class="text-center">
+            <img src="potato.png" alt="talking potato" class="potato-img" />
+        </div>
+    </div>
+<p class="text-center">감자 (29)/ 고학번</p>
+<div class="d-flex justify-content-center mt-3"><input class="msgbox text-center" @bind="newPotato" readonly/></div>
+
+@code {
+
+    private string newPotato;
+    private int clickCount = 0;
+    string[] potatoMessage = { "교수님, 잘들으세요", "4학년이어도 전공지식 잘", "모 른 다 구 요", "그냥 살다보니까 4학년 됐 다 구 요.", "저 고학번인 거 알려주지 마 시 라 구 요", "새내기나 다른 학년이 저한테 기대해도","저는 해줄 수 있는 거 없 다 구 요","전 그냥 말하는 감 자 라 구 요" };
+    private void HeyPotato()
+    {
+        if(clickCount<potatoMessage.Length)
+        {
+            newPotato = potatoMessage[clickCount];
+            clickCount++;
+        }else if(clickCount==potatoMessage.Length)
+        {
+            clickCount = 0;
+            newPotato = potatoMessage[clickCount];
+        }
+
+
+
+    }
+
+}

@@ -8,7 +8,9 @@ namespace Chat.Client
     public class Chatt
     {
         public string Mymessage { get; set; }
-        public bool IsSent { get; set; }
-        
+        public string SimsMessage { get; set; }
+
     }
+
+   
 }
