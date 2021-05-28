@@ -142,3 +142,98 @@ a:hover{
     .mybtn2:hover {
         box-shadow: 2px 2px 4px 2px darkkhaki;
     }
+
+    /*everychat*/
+
+.every-chat-box{
+    width:400px;
+    height:800px;
+    background-color:white;
+    overflow:hidden;
+    border-radius:5px;
+}
+
+.every-ul{
+    width:inherit;
+    height:700px;
+    box-sizing:border-box;
+    padding:15px;
+    list-style:none;
+    overflow:auto;
+}
+
+.every-li {
+    box-sizing: border-box;
+    height: 40px;
+    font-size: 13px;
+    line-height:32px;
+}
+
+.mention1 {
+    line-height: 32px;
+    background-color: aquamarine;
+    border-radius:10px;
+    font-size:13px;
+    padding-left:5px;
+    padding-right:5px;
+}
+
+.mention2 {
+    line-height: 32px;
+    background-color: plum;
+    border-radius: 10px;
+    font-size: 13px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+  
+
+
+.mention3 {
+    line-height: 32px;
+    background-color: skyblue;
+    border-radius: 10px;
+    font-size: 13px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.everychat-inputs {
+    width: inherit;
+    height: 100px;
+    background-color: darkkhaki;
+}
+
+.s-inputs{
+    width:320px;
+    height:60px;
+    box-sizing:border-box;
+    padding:10px;
+}
+
+.design-input{
+    border:1px dotted darkolivegreen;
+    border-radius:6px;
+}
+
+.design-input1 {
+    border: 1px dotted darkolivegreen;
+    border-radius: 6px;
+    background-color:khaki;
+}
+
+.every-btn {
+    width: 80px;
+    height: inherit;
+    background-color: darkolivegreen;
+    text-align: center;
+    line-height: 100px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+}
+
+.every-btn:hover{
+    background-color:olivedrab;
+
+}

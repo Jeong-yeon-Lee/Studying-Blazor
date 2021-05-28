@@ -4,25 +4,84 @@
 <div class="d-flex justify-content-center">
     <div class="every-whole mt-3">
         <h2 class="text-center every-title mb-3">ChatChat</h2>
+        <p class="text-center">~혼자서도 채팅을 할 수 있어요~</p>
         <div class="every-chat-box d-flex flex-column">
-            <ul class="every-ul">
+            <ul class="every-ul d-flex flex-column">
+                @foreach(var friend in friendss)
+                {
+                   if(friend.OnesName=="Sparrow")
+                    {
+                          <li class="every-li d-flex p-1">
+                        <div>@friend.OnesName :</div><div class="mention2">@friend.OnesMessage</div>
+                        <div class="flex-grow-1"></div>        
+                        </li>
+                }
+                    else if(friend.OnesName=="Magpie")
+                    {
+                         <li class="every-li d-flex p-1">
+                        <div>@friend.OnesName :</div><div class="mention1">@friend.OnesMessage</div>
+                        <div class="flex-grow-1"></div>        
+                        </li>
+                }
+                    else
+                    {
+                        <li class="every-li d-flex p-1">
+                        <div>@friend.OnesName :</div><div class="mention3">@friend.OnesMessage</div>
+                        <div class="flex-grow-1"></div>        
+                        </li>
+                    }
+                      
+                
+                    
+                        
+                
+                    
+                }
                 
             </ul>
-            <div class="everychat-inputs">
-                <select>
-                    <option>-</option>
-                    <option>1</option>
-                    <option>2</option>
-                    <option>3</option>
-                </select>
+            <div class="everychat-inputs d-flex align-items-center justify-content-between">
+                <div class="s-inputs d-flex">
+                    <select class="flex-shirink-1 design-input1" @bind="newOneName">
+                        <option value="-">역할선택</option>
+                        <option value="Magpie">Magpie</option>
+                        <option value="Sparrow">Sparrow</option>
+                        <option value="Robin">Robin</option>
+                    </select>
+                <input class="w-100 design-input" placeholder="Write here!" @bind="newOneMessage"/>
+            </div>
+                <div class="every-btn" @onclick="SendMessage2">SEND</div>
+                
             </div>
         </div>
-
+       
     </div>
 </div>
 
 
 @code {
-    private List<FriendOne> friend1 = new();
+
+    private List<FriendOne> friendss = new();
+    private string newOneName;
     private string newOneMessage;
+
+
+    private void SendMessage2()
+    {  
+
+        if(!string.IsNullOrWhiteSpace(newOneName))
+        {   
+           
+
+            if (!string.IsNullOrWhiteSpace(newOneMessage))
+            {   
+                
+               
+                friendss.Add(new FriendOne {OnesName=newOneName,OnesMessage=newOneMessage});
+                newOneMessage = string.Empty;
+              
+            } 
+        }
+          
+    }
+
 }
