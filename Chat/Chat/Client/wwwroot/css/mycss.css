@@ -6,15 +6,17 @@ body {
     background-color: khaki;
     font-family: NanumBarunpen;
 }
-a{
-    text-decoration:none;
-    color:white;
+
+a {
+    text-decoration: none;
+    color: white;
 }
-a:hover{
-    text-decoration:none;
-    color:white;
-    font-weight:bold;
-}
+
+    a:hover {
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+    }
 
 .sticky-ul {
     list-style: none;
@@ -23,12 +25,12 @@ a:hover{
     font-family: NanumBarunpen;
 }
 
-.sticky-ul > li {
-    width: 100px;
-    text-align: center;
-    line-height: 30px;
-    height: inherit;
-}
+    .sticky-ul > li {
+        width: 100px;
+        text-align: center;
+        line-height: 30px;
+        height: inherit;
+    }
 
 .simsim-box {
     width: 350px;
@@ -36,7 +38,6 @@ a:hover{
     background-color: ivory;
     padding: 25px;
     border-radius: 5px;
-    
 }
 
 .glo-box {
@@ -48,99 +49,91 @@ a:hover{
     position: relative;
 }
 
-    .glo-box > input {
-        width: 70px;
-        height: 30px;
-        opacity: 0;
-        cursor: pointer;
-        position:relative;
-    }
-
 .glo-circle {
     width: 26px;
     height: 26px;
     background-color: white;
     border-radius: 28px;
     position: absolute;
-    top:2px;
-    left:2px;
     cursor: pointer;
-    transition-property: transform;
-    transition-duration: 1s;
-
-}
-
-.glo-box > input:checked + .glo-circle {
-    transform: translate(41px,0);
+    transition-property: right;
+    transition-duration: 2s;
 }
 
 
-
-.myh2{
-    font-weight:bold;
-}
-.myh5{
-    font-size:14px;
-    color:darkkhaki;
-}
-.myul{
-    width:300px;
-    height:inherit;
+.go-right {
+    right: 1px;
 }
 
-.myul{
-    list-style:none;
-    margin:0;
-    padding:0;
-}
-.myul>li{
-    width:inherit;
-    height:30px;
-}
-.myul>li:nth-child(even){
-    background-color:#f8f3b6;
+.myh2 {
+    font-weight: bold;
 }
 
-.mybtn{
-    width:220px;
-    height:30px;
-    background-color:khaki;
-    border:0;
-    border-radius:5px;
+.myh5 {
+    font-size: 14px;
+    color: darkkhaki;
 }
 
-.mybtn:hover{
-    box-shadow:2px 2px 4px 2px darkkhaki;
+.myul {
+    width: 300px;
+    height: inherit;
 }
 
-.myinput{
-    width:300px;
-    height:30px;
-    border:2px dotted khaki;
-    border-radius:5px;
-    text-indent:5px;
+.myul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
 }
 
-.mysticky{
-    height:30px;
-    background-color:darkkhaki;
-    color:white;
+    .myul > li {
+        width: inherit;
+        height: 30px;
+    }
+
+        .myul > li:nth-child(even) {
+            background-color: #f8f3b6;
+        }
+
+.mybtn {
+    width: 220px;
+    height: 30px;
+    background-color: khaki;
+    border: 0;
+    border-radius: 5px;
+}
+
+    .mybtn:hover {
+        box-shadow: 2px 2px 4px 2px darkkhaki;
+    }
+
+.myinput {
+    width: 300px;
+    height: 30px;
+    border: 2px dotted khaki;
+    border-radius: 5px;
+    text-indent: 5px;
+}
+
+.mysticky {
+    height: 30px;
+    background-color: darkkhaki;
+    color: white;
 }
 
 
 /*talking potato*/
 
 
-.potato-img{
-    width:456px;
-    height:281px;
+.potato-img {
+    width: 456px;
+    height: 281px;
 }
 
-.msgbox{
-    width:300px;
-    height:40px;
-    background-color:ivory;
-    border:2px dotted darkkhaki;
+.msgbox {
+    width: 300px;
+    height: 40px;
+    background-color: ivory;
+    border: 2px dotted darkkhaki;
 }
 
 .mybtn2 {
@@ -155,36 +148,96 @@ a:hover{
         box-shadow: 2px 2px 4px 2px darkkhaki;
     }
 
-/*every-chat*/
+/*everychat*/
 
-.every-chat-box{
-    width:400px;
-    height:800px;
-    background-color:white;
-    border-radius:5px;
-    /*box-shadow:1px 1px 10px 5px darkkhaki;*/
-    overflow:hidden;
-}
-
-.every-whole{
-    width:400px;
-    height:auto;
-}
-
-.every-title{
-    font-weight:bold;
-}
-
-.everychat-inputs{
-    width:inherit;
-    height:100px;
-    background-color:darkkhaki;
+.every-chat-box {
+    width: 400px;
+    height: 800px;
+    background-color: white;
+    overflow: hidden;
+    border-radius: 5px;
 }
 
 .every-ul {
     width: inherit;
     height: 700px;
-    overflow:auto;
-    box-sizing:border-box;
-    padding:10px;
+    box-sizing: border-box;
+    padding: 15px;
+    list-style: none;
+    overflow: auto;
 }
+
+.every-li {
+    box-sizing: border-box;
+    height: 40px;
+    font-size: 13px;
+    line-height: 32px;
+}
+
+.mention1 {
+    line-height: 32px;
+    background-color: aquamarine;
+    border-radius: 10px;
+    font-size: 13px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.mention2 {
+    line-height: 32px;
+    background-color: plum;
+    border-radius: 10px;
+    font-size: 13px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+
+
+.mention3 {
+    line-height: 32px;
+    background-color: skyblue;
+    border-radius: 10px;
+    font-size: 13px;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.everychat-inputs {
+    width: inherit;
+    height: 100px;
+    background-color: darkkhaki;
+}
+
+.s-inputs {
+    width: 320px;
+    height: 60px;
+    box-sizing: border-box;
+    padding: 10px;
+}
+
+.design-input {
+    border: 1px dotted darkolivegreen;
+    border-radius: 6px;
+}
+
+.design-input1 {
+    border: 1px dotted darkolivegreen;
+    border-radius: 6px;
+    background-color: khaki;
+}
+
+.every-btn {
+    width: 80px;
+    height: inherit;
+    background-color: darkolivegreen;
+    text-align: center;
+    line-height: 100px;
+    font-size: 16px;
+    color: white;
+    cursor: pointer;
+}
+
+    .every-btn:hover {
+        background-color: olivedrab;
+    }
