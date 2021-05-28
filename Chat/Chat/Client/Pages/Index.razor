@@ -1,141 +1,119 @@
 ﻿
 @using System
-@page "/"
+@page "/"  
 <MyNavi></MyNavi>
-<div class="d-flex justify-content-center">
-    @if (IsChange)
-    {
-        <div class="simsim-box d-flex flex-column justify-content-center mb-3 mt-5">
 
+<div class="d-flex justify-content-center">
+    <div class="simsim-box d-flex flex-column justify-content-center mb-3 mt-5">
+        @if (isEnglishMode)
+        {
             <h2 class="text-center myh2">SimSim</h2>
             <h5 class="text-center myh5">Talk to SimSim :)</h5>
-            <ul class="myul">
-                @foreach (var chat in chats)
-                {
-                    <li>user: @chat.Mymessage</li>
-
-                    /*
-                if(chat.IsSent)
-                    {
-                        <li>simsim: @simMessage[index]</li>
-
-                    }
-                    */
-                    <li>simsim: @chat.SimsMessage</li>
-
-                }
-            </ul>
-
-            <input class="myinput mb-3 mt-3" placeholder="Write here!" @bind="newMessage" />
-            <div class="d-flex justify-content-between mb-3">
-                <div class="glo-box">
-                    <div class="glo-circle @(IsChange? "go-right" :"")" @onclick="ChangeClass"></div>
-                </div>
-                <button class="mybtn" @onclick="SendMessage">SEND</button>
-                <!--<button class="mybtn" @onclick="SendMessageInKor">전송</button>-->
-            </div>
-
-        </div>
-    }
-    else
-    {
-        <div class="simsim-box d-flex flex-column justify-content-center mb-3 mt-5">
-
+        }
+        else
+        {
             <h2 class="text-center myh2">심심이</h2>
             <h5 class="text-center myh5">심심이에게 말을 걸어보세요:)</h5>
-            <ul class="myul">
-                @foreach (var chat in chats)
+        }
+
+        <ul class="myul">
+            @foreach (var chat in chats)
+            {
+                <li>@(isEnglishMode ? "user" : "사용자"): @chat.Mymessage</li>
+
+                /*
+            if(chat.IsSent)
                 {
-                    <li>나: @chat.Mymessage</li>
-
-                    /*
-                if(chat.IsSent)
-                    {
-                        <li>simsim: @simMessage[index]</li>
-
-                    }
-                    */
-                    <li>심심이: @chat.SimsMessage</li>
+                    <li>simsim: @simMessage[index]</li>
 
                 }
-            </ul>
+                */
+                <li>@(isEnglishMode ? "simsim" : "심심이"): @chat.SimsMessage</li>
 
-            <input class="myinput mb-3 mt-3" placeholder="여기에 적어봐요!" @bind="newMessage" />
-            <div class="d-flex justify-content-between mb-3">
-                <div class="glo-box">
-                    <div class="glo-circle @(IsChange? "go-right" :"")" @onclick="ChangeClass"></div>
-                </div>
-                
-                <button class="mybtn" @onclick="SendMessageInKor">전송</button>
+            }
+        </ul>
+
+        <input class="myinput mb-3 mt-3" placeholder="@(isEnglishMode ? "Write here!" : "여기에 적어봐요!")" @bind="newMessage" />
+        <div class="d-flex justify-content-between mb-3">
+            <div class="glo-box">
+                <input type="checkbox" @bind="isEnglishMode" />
+                <div class="glo-circle"></div>
+
             </div>
+            @if (isEnglishMode)
+            {
+                <button class="mybtn" @onclick="SendMessage">SEND</button>
 
+            }
+            else
+            {
+                <button class="mybtn" @onclick="SendMessageInKor">전송</button>
+            }
         </div>
-    }
-
-
-
+    </div>
 </div>
 
 
-    @code{
-        private List<Chatt> chats = new();
-        private string newMessage;
-        //int seed = DateTime.Now.Millisecond;
+@code{
+    private List<Chatt> chats = new();
+    private string newMessage;
+    bool isEnglishMode = false;
+    //int seed = DateTime.Now.Millisecond;
 
-        /* Random randomm;
-         int index = 0;
-         protected override void OnInitialized()
-         {
-            randomm = new Random();
-            index = randomm.Next(8);
-            base.OnInitialized();
-         }
-         */
-        string[] simMessage = { "Hello I'm simsim", "Good afternoon!", "It’s a pleasure!", "I’m well. How are you?", "Fine, thanks. And yourself?", "It’s time for me to go.", "Got it, thanks!", "Bye! Have a good day!" };
-        string[] simMessageKor = { "안녕?난심심이야 ", "좋은아침!", "행복해~", "어떻게 지내니", "심심해......", "집에 가고싶어", "말걸어줘서 고마워!", "좋은하루 보내!","심심이랑 놀자","심심이는 200살이야"};
-        int index;
-        int index2;
+    /* Random randomm;
+        int index = 0;
         protected override void OnInitialized()
         {
-            index = 0;
-            index2 = 0;
+        randomm = new Random();
+        index = randomm.Next(8);
+        base.OnInitialized();
         }
-        //minValue maxValue
+        */
+    string[] simMessage = { "Hello I'm simsim", "Good afternoon!", "It’s a pleasure!", "I’m well. How are you?", "Fine, thanks. And yourself?", "It’s time for me to go.", "Got it, thanks!", "Bye! Have a good day!" };
+    string[] simMessageKor = { "안녕?난심심이야 ", "좋은아침!", "행복해~", "어떻게 지내니", "심심해......", "집에 가고싶어", "말걸어줘서 고마워!", "좋은하루 보내!","심심이랑 놀자","심심이는 200살이야"};
+    int index;
+    int index2;
+    protected override void OnInitialized()
+    {
+        index = 0;
+        index2 = 0;
+    }
+    //minValue maxValue
 
 
-        private void SendMessage()
+    private void SendMessage()
+    {
+
+        Random randomm;
+        randomm = new Random();
+        index = randomm.Next(simMessage.Length);
+        //randomm.Next()
+
+        if (!string.IsNullOrWhiteSpace(newMessage))
         {
+            chats.Add(new Chatt { Mymessage = newMessage, SimsMessage = simMessage[index] });
 
-            Random randomm;
-            randomm = new Random();
-            index = randomm.Next(simMessage.Length);
-            //randomm.Next()
-
-            if (!string.IsNullOrWhiteSpace(newMessage))
-            {
-                chats.Add(new Chatt { Mymessage = newMessage, SimsMessage = simMessage[index] });
-
-                newMessage = string.Empty;
-            }
-        }
-
-        private void SendMessageInKor()
-        {
-            Random randoms;
-            randoms = new Random();
-            index2 = randoms.Next(simMessageKor.Length);
-            if(!string.IsNullOrWhiteSpace(newMessage))
-            {
-                chats.Add(new Chatt { Mymessage = newMessage, SimsMessage = simMessageKor[index2] });
-                newMessage = string.Empty;
-            }
-        }
-
-        private bool IsChange { get; set; } = false;
-
-        private void ChangeClass()
-        {
-            IsChange = !IsChange;
+            newMessage = string.Empty;
         }
     }
 
+    private void SendMessageInKor()
+    {
+        Random randoms;
+        randoms = new Random();
+        index2 = randoms.Next(simMessageKor.Length);
+        if(!string.IsNullOrWhiteSpace(newMessage))
+        {
+            chats.Add(new Chatt { Mymessage = newMessage, SimsMessage = simMessageKor[index2] });
+            newMessage = string.Empty;
+        }
+    }
+
+    private bool IsChange { get; set; } = false;
+
+    private void ChangeClass()
+    {
+        IsChange = !IsChange;
+        StateHasChanged();
+    }
+}
