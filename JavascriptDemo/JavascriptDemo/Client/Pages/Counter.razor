@@ -1,0 +1,41 @@
+﻿@page "/counter"
+@inject IJSRuntime JSRuntime 
+
+
+<h1>Counter</h1>
+
+<p>Current count: @currentCount</p>
+
+<button @ref="buttonReference" class="btn btn-primary" @onclick="IncrementCount">Click me</button>
+
+@code {
+    private int currentCount = 0;
+
+    [JSInvokable]
+    private void IncrementCount()
+    {
+        currentCount++;
+        StateHasChanged();
+    }
+
+    ElementReference buttonReference;
+
+    IJSObjectReference JSObjectReference { get; set; }
+
+    protected override async Task OnAfterRenderAsync(bool firstTime)
+    {//비동기적으로 처리하겠음 
+        if(firstTime)
+        {
+            JSObjectReference = await JSRuntime.InvokeAsync<IJSObjectReference>("import", "/counter.js");
+            await JSObjectReference.InvokeVoidAsync("WireUpEvents", buttonReference, DotNetObjectReference.Create(this));
+            // <- function ShowPrompt(element,DotNetReference)
+        }
+
+    }
+}
+
+
+
+@*<script suppress-error="BL9992" src="~/counter.js"></script>*@
+
+@*need to override using suppress-error="BL9992"*@
